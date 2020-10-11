@@ -1,14 +1,16 @@
 const router = require('express').Router();
-const { notes } = require('../../db/db.json');
+const notes = require('../../db/db.json');
 const { createNewNote, validateNote, findById } = require('../../lib/notes')
+const { v4: uuidv4 } = require("uuid");
+const fs = require("fs");
 
 router.get('/notes', (req, res) => {
-    const result = createNewNote(req.body, notes);
+    const result = notes;
     
     if (result) {
       res.json(result);
     } else {
-      res.send(404);
+      res.sendStatus(404);
     }
   });
   
@@ -18,21 +20,27 @@ router.get( '/notes/:id', (req, res) => {
     if(result) {
         res.json(result);
     } else {
-        res.send( 404 );
+        res.send(404);
     };
 });
 
-router.post('/api/notes', (req, res) => {
-    // set id based on what the next index of the array will be
-    req.body.id = notes.length.toString();
+router.post('/notes', (req, res) => {
+    let noteId = uuidv4()
 
-    // if any data in req.body is incorrect, send 400 error back
-    if (!validateNote(req.body)) {
-    res.status(400).send('This note is not properly formatted.');
-    } else {
-    const note = createNewNote(req.body, notes);
-    res.json(note);
+    let newNote = {
+        id: noteId,
+        title: req.body.title,
+        text: req.body.text
     }
-});
+
+    notes.push(newNote)
+
+    res.json(newNote)
+    fs.writeFileSync("./db/db.json", JSON.stringify(notes, null, 2), function (
+        err
+      ) {
+        if (err) throw err;
+      });
+    });
 
 module.exports = router;
