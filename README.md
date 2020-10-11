@@ -21,7 +21,7 @@ A Simple application that allows a user to take notes and save them for later vi
 
 ## Installation:
 
-None needed, visit: ![https://note-taker-106.herokuapp.com/](https://note-taker-106.herokuapp.com/)
+None needed, visit: [https://note-taker-106.herokuapp.com/](https://note-taker-106.herokuapp.com/)
 
 
 ## Usage:
