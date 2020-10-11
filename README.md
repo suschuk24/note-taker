@@ -6,7 +6,7 @@
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg "License Badge")
 
-take notes and stuff
+A Simple application that allows a user to take notes and save them for later viewing. When a user no longer needs that note, it may be deleted. The notes are saved on a server, which means the application can be edited from anyone with access to the application. Great for the office, family, or just yourself!
 
 
 # Table of Contents 
@@ -21,7 +21,7 @@ take notes and stuff
 
 ## Installation:
 
-None needed, visit: ![https://note-taker-106.herokuapp.com/](https://note-taker-106.herokuapp.com/ "URL")
+None needed, visit: ![https://note-taker-106.herokuapp.com/](https://note-taker-106.herokuapp.com/)
 
 
 ## Usage:
