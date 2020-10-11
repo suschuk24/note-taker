@@ -70,7 +70,13 @@ Testing completed using jest, Checked for typos and bugs
 
 ## Technologies Used
 
-JavaScript,HTML,CSS,ES6,jQuery,Bootstrap,Node
+* JavaScript
+* HTML
+* CSS
+* ES6
+* jQuery
+* Bootstrap
+* Node
 
 
 ## Questions:
